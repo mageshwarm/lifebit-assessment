@@ -39,7 +39,6 @@ class RuleSet():
     ###
     def getDeps(self, pkg: str, result: list):
         result.append(pkg)
-        # print(f"{self.pkgs} --- {pkg} -- {self.pkgs.get(pkg, [])} - {result}")
         for x in self.pkgs.get(pkg, []):
             if x not in result:
                 self.getDeps(x, result)
